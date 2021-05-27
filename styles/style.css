@@ -1,0 +1,248 @@
+* {
+    box-sizing: border-box;
+}
+
+div {
+    display: block;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 24px;
+    max-width: 1440px;
+    padding: 40px 90px;
+    margin: 0 auto;
+    background-size: cover;
+
+}
+
+.btn {
+    display: block;
+    position: relative;
+    -webkit-transition: background .15s ease-in-out;
+    transition: background .15s ease-in-out;
+
+    height: 44px;
+    width: 44px;
+    margin-right: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 44px;
+    text-transform: uppercase;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.reload-btn {
+    background-image: url(../images/reload-image.svg);
+}
+
+.header, .header-btns {
+    display: flex;
+}
+
+.lang-btn {
+    width: 71px;
+}
+
+.lang-btn select option {
+    background-color: rgba(0, 0, 0, .53);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.lang-btn select {
+    height: 44px;
+    width: 71px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #fff;
+    font-size: 14px;
+    line-height: 44px;
+    text-transform: uppercase;
+    background-color: rgba(174, 181, 185, .5);
+    background-image: url(../images/arrow-down.svg);
+    background-repeat: no-repeat;
+    background-position: 46px 19px;
+    border: 0;
+    border-radius: 5px;
+    padding-left: 15px;
+    outline: none;
+    -webkit-appearance: none;
+    -webkit-user-select: auto;
+    -moz-user-select: auto;
+    -ms-user-select: auto;
+    user-select: auto;
+}
+
+.temp-btns {
+    display: flex;
+}
+
+.temp-btn-active {
+    background: rgba(174, 181, 185, .5);
+}
+
+.temp-btn-f {
+    border-radius: 5px 0 0 5px;
+}
+
+.temp-btn-c {
+    border-radius: 0 5px 5px 0;
+    margin-right: 10px;
+}
+
+.temp-btn {
+    margin-right: 0;
+
+    text-align: center;
+    -webkit-transition: .3s;
+    transition: .3s;
+}
+
+form {
+    margin-top: 0em;
+}
+
+.search-panel {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 44px;
+    margin-left: auto;
+}
+
+.search-input {
+    box-sizing: border-box;
+    padding: 5px 0 5px 20px;
+    margin: 0;
+    background-color: rgba(76, 82, 85, .4);
+    border: 1px solid rgba(228, 227, 227, .2);
+    border-right: 0;
+    width: 220px;
+    height: 44px;
+    border-radius: 5px 0 0 5px;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+
+}
+
+.voice {
+    width: 55px;
+    height: 44px;
+    background-image: url(../images/mic.svg);
+    background-size: 14px;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-color: rgba(76, 82, 85, .4);
+    border-top: 1px solid rgba(228, 227, 227, .2);
+    border-bottom: 1px solid rgba(228, 227, 227, .2);
+    cursor: pointer;
+}
+
+.search-button {
+    width: 100px;
+    height: 44px;
+    border-radius: 0 5px 5px 0;
+    border: 0;
+    background: rgba(174, 181, 185, .5);
+    font-family: MontserratBold;
+    font-size: 14px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    line-height: 44px;
+}
+
+
+.main {
+    display: flex;
+    justify-content: space-between;
+}
+
+.location {
+    width: 720px;
+}
+
+.location-place {
+    min-height: 54px;
+    font-size: 60px;
+    font-weight: 700;
+    padding: 0;
+    margin: 80px 0 10px;
+    text-transform: uppercase;
+}
+
+.location-weather {
+    display: flex;
+    align-items: center;
+
+}
+
+.location-temperature {
+    display: flex;
+}
+
+.current-temperature {
+    font-size: 250px;
+    font-weight: 700;
+}
+
+.location-degree {
+    font-size: 100px;
+    font-weight: 700;
+
+}
+
+.location-details {
+    /*padding-top: 50px;*/
+    font-weight: 700;
+}
+
+.weather-icon {
+    font-size: 200px;
+}
+
+.weather-icon-mini{
+    font-size: 100px;
+}
+
+.coordinates{
+    position: absolute;
+    bottom: 20%;
+    right: 15%;
+}
+
+#map {
+    position: absolute;
+    top: 30%;
+    bottom: 35%;
+    right: 5%;
+    left: 65%;
+}
+
+.forecast{
+    display: flex;
+
+}
+
+
+.days{
+    padding-right: 7%;
+    font-weight: 700;
+}
+
+.day-temperature{
+    font-size: 60px;
+}
+.day-degree{
+    font-size: 60px;
+}
+
