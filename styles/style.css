@@ -153,7 +153,8 @@ form {
     border-radius: 0 5px 5px 0;
     border: 0;
     background: rgba(174, 181, 185, .5);
-    font-family: MontserratBold;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
     font-size: 14px;
     text-align: center;
     text-transform: uppercase;
