@@ -16,6 +16,11 @@ body {
     max-width: 1440px;
     padding: 40px 90px;
     margin: 0 auto;
+
+    background:  no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     background-size: cover;
 
 }

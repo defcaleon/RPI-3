@@ -60,13 +60,15 @@ let voiceFlag = false;
 
 //run
 numDay();
-reloadBackImg();
+getCity().then(r => getWeatherAndMap());
+
 currLang();
-getCity();
+
 showTime();
-getWeatherAndMap();
+
 getTemperatureCond();
 startSelect();
+reloadBackImg();
 
 
 voiceBtn.addEventListener('click', () => {
@@ -274,13 +276,17 @@ function currLang() {
 
 }
 
-function getCity() {
+ async function getCity() {
+
     if (localStorage.getItem('city') === null || localStorage.getItem('country') === null) {
-        getGeolocation();
+       await getGeolocation();
     } else {
         city.textContent = localStorage.getItem('city');
         country.textContent = localStorage.getItem('country');
     }
+
+    console.log("getcity");
+    console.log(localStorage.getItem('city'));
 
 }
 
@@ -309,14 +315,16 @@ function addZero(n) {
 
 
 async function getLinkToImage() {
-    const url = 'https://api.unsplash.com/photos/random?query=night&client_id=wMR3Adq52thNgDI8TO8Poc7uIVuq1RkPC6BcCCgrANE';
+    const url = 'https://api.unsplash.com/photos/random?query=night&orientation=landscape&client_id=wMR3Adq52thNgDI8TO8Poc7uIVuq1RkPC6BcCCgrANE';
     const res = await fetch(url);
     if (!res.ok) {
         body.style.backgroundImage = `url(images/def_back.jpg)`;
         console.log("defBack");
         return;
     }
+
     const data = await res.json();
+    //console.log(data);
     //console.log(data.urls.regular);
     body.style.backgroundImage = `url(${data.urls.regular})`;
 
@@ -328,6 +336,7 @@ async function getGeolocation() {
     if (!res.ok) {
         console.log("error in res");
     } else {
+
         const data = await res.json();
         city.textContent = data.city;
         country.textContent = data.country;
@@ -335,7 +344,7 @@ async function getGeolocation() {
 
         localStorage.setItem('city', city.textContent);
         localStorage.setItem('country', country.textContent);
-        //console.log(data);
+
     }
 
 }
@@ -343,6 +352,8 @@ async function getGeolocation() {
 
 async function getWeatherAndMap() {
 
+    console.log("getwather");
+    console.log(localStorage.getItem("city"));
     let currCity = searchInput.value !== "" ? searchInput.value : localStorage.getItem("city");
     let url = `https://api.openweathermap.org/data/2.5/weather?q=${currCity}&lang=en&appid=32668db5559e877281a139dd47d93fee&units=metric`;
 
@@ -459,7 +470,7 @@ function voiceFunc(){
             voiceFlag=false;
             searchInput.value="";
         } else {
-            console.log('Промежуточный результат: ', result[0].transcript);
+           // console.log('Промежуточный результат: ', result[0].transcript);
             searchInput.value=result[0].transcript;
         }
     };
