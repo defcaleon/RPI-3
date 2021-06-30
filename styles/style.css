@@ -1,28 +1,23 @@
 * {
-    box-sizing: border-box;
-}
+    box-sizing: border-box}
+
 
 div {
     display: block;
+
 }
 
 body {
-    display: flex;
-    flex-direction: column;
     font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;
     color: #fff;
-    font-size: 24px;
-    max-width: 1440px;
-    padding: 40px 90px;
-    margin: 0 auto;
-
+    margin: 0;
     background:  no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-
+    padding: 40px 60px;
 }
 
 .btn {
@@ -33,10 +28,10 @@ body {
 
     height: 44px;
     width: 44px;
-    margin-right: 10px;
+
     cursor: pointer;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 15px;
     line-height: 44px;
     text-transform: uppercase;
     -webkit-user-select: none;
@@ -49,20 +44,24 @@ body {
     background-image: url(../images/reload-image.svg);
 }
 
-.header, .header-btns {
-    display: flex;
+.nav, .header-btns .header{
+    width: 100%;
 }
 
 .lang-btn {
     width: 71px;
+    margin: 0 0.9vw;
+
 }
 
 .lang-btn select option {
     background-color: rgba(0, 0, 0, .53);
     font-family: 'Montserrat', sans-serif;
+
 }
 
 .lang-btn select {
+    padding-left: 15px;
     height: 44px;
     width: 71px;
     cursor: pointer;
@@ -77,7 +76,6 @@ body {
     background-position: 46px 19px;
     border: 0;
     border-radius: 5px;
-    padding-left: 15px;
     outline: none;
     -webkit-appearance: none;
     -webkit-user-select: auto;
@@ -100,7 +98,7 @@ body {
 
 .temp-btn-c {
     border-radius: 0 5px 5px 0;
-    margin-right: 10px;
+
 }
 
 .temp-btn {
@@ -117,10 +115,8 @@ form {
 
 .search-panel {
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
     height: 44px;
-    margin-left: auto;
+
 }
 
 .search-input {
@@ -130,7 +126,7 @@ form {
     background-color: rgba(76, 82, 85, .4);
     border: 1px solid rgba(228, 227, 227, .2);
     border-right: 0;
-    width: 220px;
+    width: 40%;
     height: 44px;
     border-radius: 5px 0 0 5px;
     color: #fff;
@@ -140,7 +136,7 @@ form {
 }
 
 .voice {
-    width: 55px;
+    width:15%;
     height: 44px;
     background-image: url(../images/mic.svg);
     background-size: 14px;
@@ -170,68 +166,74 @@ form {
 
 .main {
     display: flex;
-    justify-content: space-between;
+    margin-top: 80px;
+    flex-wrap: wrap;
+
 }
 
-.location {
-    width: 720px;
+.location-date {
+    font-size: 2vw;
+
 }
 
 .location-place {
+    margin: 0;
     min-height: 54px;
-    font-size: 60px;
+    font-size: 6vw;
     font-weight: 700;
     padding: 0;
-    margin: 80px 0 10px;
     text-transform: uppercase;
 }
 
 .location-weather {
-    display: flex;
+
     align-items: center;
 
 }
 
 .location-temperature {
-    display: flex;
+
 }
 
 .current-temperature {
-    font-size: 250px;
+    font-size: 15vw;
     font-weight: 700;
 }
 
 .location-degree {
-    font-size: 100px;
+    position: absolute;
+    font-size: 5vw;
     font-weight: 700;
+    margin-bottom: 100%;
 
 }
 
 .location-details {
     /*padding-top: 50px;*/
     font-weight: 700;
+    font-size: 1.5vw;
 }
 
 .weather-icon {
-    font-size: 200px;
+    font-size: 13vw ;
 }
 
 .weather-icon-mini{
-    font-size: 100px;
+    font-size: 6vw;
 }
 
 .coordinates{
-    position: absolute;
-    bottom: 20%;
-    right: 15%;
+    font-size: 1.7vw;
+
+
 }
 
 #map {
-    position: absolute;
-    top: 30%;
-    bottom: 35%;
-    right: 5%;
-    left: 65%;
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+    border-radius: 10px;
 }
 
 .forecast{
@@ -241,14 +243,60 @@ form {
 
 
 .days{
-    padding-right: 7%;
+
     font-weight: 700;
 }
 
 .day-temperature{
-    font-size: 60px;
+    font-size: 5vw;
 }
 .day-degree{
-    font-size: 60px;
+    font-size: 5vw;
 }
 
+@media (max-width: 576px) {
+    body {
+        padding: 2px;
+    }
+
+    .location, .location-weather {
+        text-align: center;
+        justify-content: center;
+    }
+
+    .main {
+        margin-top: 20px;
+    }
+
+    .navbar {
+        flex-wrap: wrap;
+    }
+
+    .search-input {
+        width: 100%
+    }
+
+    .header-btns {
+        justify-content: space-between;
+    order: 2;
+    }
+.search-panel{
+    order: 1;
+}
+    #map {
+        width: 95%;
+        margin: 0 auto;
+    }
+    .location-date{
+        font-size: 15px;
+    }
+    .location-details{
+        font-size: 12px;
+    }
+    .coordinates{
+        justify-content: space-around;
+        display: flex;
+
+        font-size: 12px;
+    }
+}

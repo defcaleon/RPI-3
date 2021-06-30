@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="ie-edge"/>
     <link rel="stylesheet" href="styles/owfont-regular.css">
-    <link rel="stylesheet" href="styles/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300;1,400&display=swap"
           rel="stylesheet">
@@ -17,29 +16,30 @@
 </head>
 <body>
 <div id="root">
-    <div class="App">
-        <header class="header">
-            <div class="header-btns">
-                <div id="reload" class="reload-btn btn"><i></i></div>
-                <div class="lang-btn btn"><i></i><select id="lang">
+    <div class="App ">
+        <nav class="navbar d-flex">
+            <div class="header-btns d-flex col-12 col-sm-6">
+                <div id="reload" class="reload-btn btn nav-item"><i></i></div>
+                <div class="lang-btn btn "><i></i><select id="lang">
                     <option>en</option>
                     <option>ru</option>
                 </select></div>
                 <div class="temp-btns">
-                    <div id="temp-f" class="temp-btn temp-btn-f btn " data-scale="F">°F<i></i></div>
-                    <div id="temp-c" class="temp-btn temp-btn-c btn" data-scale="C">°C<i></i></div>
+                    <div id="temp-f" class="temp-btn temp-btn-f btn nav-item" data-scale="F">°F<i></i></div>
+                    <div id="temp-c" class="temp-btn temp-btn-c btn nav-item" data-scale="C">°C<i></i></div>
                 </div>
             </div>
 
-            <div class="search-panel"><input class="search-input" type="text" name="city" placeholder="Search"
-                                              autocomplete="off">
+            <div class="search-panel col-12 col-sm-6 justify-content-end"><input class="search-input" type="text"
+                                                                                 name="city" placeholder="Search"
+                                                                                 autocomplete="off">
                 <div class="voice"></div>
-                <button class="search-button btn" id ="search">Search<i></i></button>
+                <button class="search-button btn" id="search">Search<i></i></button>
             </div>
-        </header>
+        </nav>
 
-        <div class="main">
-            <div class="location">
+        <div class="main justify-content-center">
+            <div class="location col-sm-7 col-12">
                 <p class="location-place">
                     <span id="city"></span>
                     <span>,</span>
@@ -48,7 +48,7 @@
                     <span class="location-day" id="date"></span>
                     <span class="location-time" id="time"></span></div>
 
-                <div class="location-weather">
+                <div class="location-weather d-flex">
                     <p class="location-temperature">
                         <span class="current-temperature">10</span>
                         <span class="location-degree">°</span>
@@ -78,7 +78,7 @@
             </div>
 
 
-            <div class="geolocation">
+            <div class="geolocation col-12 col-sm-5 ">
 
                 <div id="map"></div>
 
@@ -95,47 +95,47 @@
             </div>
         </div>
 
-        <div class="forecast">
+        <div class="forecast col-12 justify-content-around align-content-end">
 
-            <div class="day-one days" >
+            <div class="day-one days">
                 <p class="day" id="num-day-one"></p>
-                <p class="location-temperature" >
+                <p class="location-temperature">
                     <span class="day-temperature" id="temp-day-one">10</span>
                     <span class="day-degree">°</span>
-                    <span><i class="  "id="ico-day-one" ></i></span>
+                    <span><i class="  " id="ico-day-one"></i></span>
                 </p>
 
             </div>
 
-            <div class="day-two days" >
+            <div class="day-two days">
                 <p class="day" id="num-day-two"></p>
-                <p class="location-temperature" >
+                <p class="location-temperature">
                     <span class="day-temperature" id="temp-day-two">10</span>
                     <span class="day-degree">°</span>
-                    <span><i class="  "id="ico-day-two" ></i></span>
+                    <span><i class="  " id="ico-day-two"></i></span>
                 </p>
 
             </div>
 
-            <div class="day-three days" >
+            <div class="day-three days">
                 <p class="day" id="num-day-three"></p>
-                <p class="location-temperature" >
+                <p class="location-temperature">
                     <span class="day-temperature" id="temp-day-three">10</span>
                     <span class="day-degree">°</span>
-                    <span><i class=" "id="ico-day-three" ></i></span>
+                    <span><i class=" " id="ico-day-three"></i></span>
                 </p>
 
             </div>
-        </div>
-
         </div>
 
     </div>
 
-
 </div>
 
 
+</div>
+<link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap-grid.min.css">
+<link rel="stylesheet" href="styles/style.css">
 
 <script src="scripts/main.js"></script>
 </body>
