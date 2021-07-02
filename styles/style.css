@@ -192,6 +192,7 @@ form {
 }
 
 .location-temperature {
+    text-align: center;
 
 }
 
@@ -299,4 +300,12 @@ form {
 
         font-size: 12px;
     }
+}
+@media (max-width: 360px) {
+    .forecast{
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
 }
